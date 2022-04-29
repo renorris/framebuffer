@@ -58,6 +58,6 @@ int main()
         // TODO: Sleep until next frame
         auto end_t = std::chrono::steady_clock::now();
         auto elapsed_t = std::chrono::duration_cast<std::chrono::microseconds>(end_t - start_t);
-        std::this_thread::sleep_for(std::chrono::microseconds(frame_t));
+        std::this_thread::sleep_for(std::chrono::microseconds(frame_t - elapsed_t));
     }
 }
